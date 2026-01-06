@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Defense Master - Ultimate Protection Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(26, 37, 47, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 14px;
+            color: #95a5a6;
+            margin-bottom: 5px;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 0 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50px;
+            color: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .tab-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--secondary);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 0;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #ddd;
+        }
+
+        .emergency-btn {
+            background: linear-gradient(45deg, var(--danger), #c0392b);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .emergency-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .card-content {
+            font-size: 15px;
+        }
+
+        /* HP Status Card */
+        .hp-card {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.2));
+            border-left: 5px solid var(--danger);
+        }
+
+        .hp-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hp-bar-container {
+            flex-grow: 1;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .hp-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--danger), #ff9f43);
+            border-radius: 10px;
+            width: 30%;
+            transition: width 1s ease;
+        }
+
+        .hp-value {
+            font-weight: bold;
+            font-size: 18px;
+            color: var(--danger);
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style-type: none;
+        }
+
+        .tips-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-icon {
+            color: var(--success);
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        /* Technique Grid */
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .technique-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .technique-card:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: scale(1.05);
+        }
+
+        .technique-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        /* Scenario Section */
+        .scenario {
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius);
+            padding: 20px;
+            border-left: 4px solid var(--warning);
+        }
+
+        .scenario-title {
+            color: var(--warning);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 37, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .footer-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            color: #bdc3c7;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+
+        .footer-btn.active {
+            color: var(--accent);
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .footer-btn:hover {
+            color: var(--accent);
+        }
+
+        .footer-icon {
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .technique-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 970px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1170px;
+            }
+        }
+
+        /* Animation for HP */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .low-hp {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="logo-text">SELF-DEFENSE MASTER</div>
+            </div>
+            <div class="tagline">Your Ultimate Guide to Personal Safety & Protection</div>
+            
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="basics">
+                    <i class="fas fa-home"></i> Basics
+                </button>
+                <button class="tab-btn" data-tab="techniques">
+                    <i class="fas fa-fist-raised"></i> Techniques
+                </button>
+                <button class="tab-btn" data-tab="scenarios">
+                    <i class="fas fa-exclamation-triangle"></i> Scenarios
+                </button>
+                <button class="tab-btn" data-tab="recovery">
+                    <i class="fas fa-heartbeat"></i> HP Recovery
+                </button>
+                <button class="tab-btn" data-tab="mental">
+                    <i class="fas fa-brain"></i> Mental Game
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Self-Defense Mastery: Protect Yourself With Confidence</h1>
+                <p>Learn essential self-defense techniques, situational awareness, and recovery strategies. This guide is structured for complete beginners to understand and apply effectively in real situations.</p>
+                <button class="emergency-btn" id="emergencyBtn">
+                    <i class="fas fa-phone-alt"></i> EMERGENCY GUIDE
+                </button>
+            </section>
+
+            <!-- Tab Content: Basics -->
+            <div class="tab-content active" id="basics">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2 class="card-title">Core Principles of Self-Defense</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Self-defense is not just about fighting back. It's about awareness, prevention, and using your smarts to stay safe. Remember these key principles:</p>
+                        <ul class="tips-list">
+                            <li>
+                                <i class="fas fa-check-circle tip-icon"></i>
+                                <span><strong>Awareness:</strong> Always know what's happening around you. Avoid distractions like phones in risky areas.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle tip-icon"></i>
+                                <span><strong>De-escalation:</strong> Your words can be your best defense. Stay calm and try to talk your way out.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle tip-icon"></i>
+                                <span><strong>Boundaries:</strong> Clearly say "NO" or "STOP" if someone invades your personal space.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle tip-icon"></i>
+                                <span><strong>Escape:</strong> Your main goal is to get away safely, not to "win" a fight.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle tip-icon"></i>
+                                <span><strong>Legal rights:</strong> Know what self-defense laws apply in your area.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h2 class="card-title">Situational Awareness: Your First Line of Defense</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Most attacks can be avoided if you see them coming. Practice these awareness habits:</p>
+                        <ul class="tips-list">
+                            <li>
+                                <i class="fas fa-binoculars tip-icon"></i>
+                                <span><strong>Scan your environment</strong> regularly when walking. Notice exits, safe places, and potential threats.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-friends tip-icon"></i>
+                                <span><strong>Avoid "head down" posture</strong> when using your phone in public. It makes you an easy target.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-walking tip-icon"></i>
+                                <span><strong>Trust your instincts</strong> - if something feels wrong, it probably is. Leave the area immediately.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marked-alt tip-icon"></i>
+                                <span><strong>Plan your routes</strong> in advance, especially at night. Stick to well-lit, populated areas.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Techniques -->
+            <div class="tab-content" id="techniques">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h2 class="card-title">Essential Self-Defense Techniques</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Learn these basic techniques. Practice them slowly at first, then build up speed. Remember: only use force when necessary for your safety.</p>
+                        
+                        <div class="technique-grid">
+                            <div class="technique-card">
+                                <div class="technique-icon">
+                                    <i class="fas fa-hand-rock"></i>
+                                </div>
+                                <h3>Palm Strike</h3>
+                                <p>Strike with the base of your palm to the nose or chin.</p>
+                            </div>
+                            <div class="technique-card">
+                                <div class="technique-icon">
+                                    <i class="fas fa-shoe-prints"></i>
+                                </div>
+                                <h3>Groin Kick</h3>
+                                <p>Kick upward forcefully to the groin area.</p>
+                            </div>
+                            <div class="technique-card">
+                                <div class="technique-icon">
+                                    <i class="fas fa-elbows-out"></i>
+                                </div>
+                                <h3>Elbow Strike</h3>
+                                <p>Use your elbow in close range to face or ribs.</p>
+                            </div>
+                            <div class="technique-card">
+                                <div class="technique-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <h3>Escape & Run</h3>
+                                <p>Create distance and escape to safety.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 25px; margin-bottom: 10px;">Key Targets on the Body</h3>
+                        <ul class="tips-list">
+                            <li>
+                                <i class="fas fa-crosshairs tip-icon"></i>
+                                <span><strong>Eyes:</strong> Even a slight poke can disorient an attacker.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-crosshairs tip-icon"></i>
+                                <span><strong>Nose:</strong> A hard strike here causes tears and disorientation.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-crosshairs tip-icon"></i>
+                                <span><strong>Throat:</strong> A strike can disrupt breathing.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-crosshairs tip-icon"></i>
+                                <span><strong>Groin:</strong> Extremely sensitive area for most attackers.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-crosshairs tip-icon"></i>
+                                <span><strong>Knees:</strong> Side kick to the knee can disable movement.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Scenarios -->
+            <div class="tab-content" id="scenarios">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-map-signs"></i>
+                        </div>
+                        <h2 class="card-title">Common Scenarios & How to Respond</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="scenario">
+                            <h3 class="scenario-title">
+                                <i class="fas fa-user-ninja"></i>
+                                Scenario 1: Someone grabs your wrist
+                            </h3>
+                            <p><strong>What to do:</strong> Twist your arm quickly in the direction of their thumb (the weakest point of the grip). Simultaneously strike with your free hand to create distraction. Then run to safety.</p>
+                            <p><strong>What NOT to do:</strong> Don't just pull straight back - this plays to their strength. Don't freeze in panic.</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h3 class="scenario-title">
+                                <i class="fas fa-user-ninja"></i>
+                                Scenario 2: Attacker approaches from front
+                            </h3>
+                            <p><strong>What to do:</strong> Create distance immediately. Use a firm voice: "STOP! BACK AWAY!" If they continue, target vulnerable areas (eyes, nose, groin) and escape.</p>
+                            <p><strong>What NOT to do:</strong> Don't turn your back immediately. Don't engage in conversation if they're aggressive.</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h3 class="scenario-title">
+                                <i class="fas fa-user-ninja"></i>
+                                Scenario 3: You're being followed
+                            </h3>
+                            <p><strong>What to do:</strong> Change direction or cross the street. Go to a crowded, well-lit area. Call someone and speak loudly about your location. Enter a store or public building.</p>
+                            <p><strong>What NOT to do:</strong> Don't go home (they'll know where you live). Don't confront them unless absolutely necessary.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: HP Recovery -->
+            <div class="tab-content" id="recovery">
+                <div class="card hp-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h2 class="card-title">HP Recovery: What to Do After Being Hit</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="hp-status">
+                            <span>Your HP Status:</span>
+                            <div class="hp-bar-container">
+                                <div class="hp-bar low-hp" id="hpBar"></div>
+                            </div>
+                            <div class="hp-value" id="hpValue">30%</div>
+                        </div>
+                        
+                        <p>If you've been hit or injured during an attack, follow these steps for recovery and safety:</p>
+                        
+                        <ul class="tips-list">
+                            <li>
+                                <i class="fas fa-first-aid tip-icon"></i>
+                                <span><strong>Assess injuries immediately:</strong> Check for bleeding, broken bones, or head trauma. Adrenaline may mask pain.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt tip-icon"></i>
+                                <span><strong>Call for help:</strong> Dial emergency services even if you think you're okay. Some injuries appear later.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-home tip-icon"></i>
+                                <span><strong>Get to safety first:</strong> Move to a secure location before treating injuries.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-tint tip-icon"></i>
+                                <span><strong>Control bleeding:</strong> Apply direct pressure with a clean cloth. Elevate the injured area if possible.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-snowflake tip-icon"></i>
+                                <span><strong>Reduce swelling:</strong> Apply ice packs to bruises or swellings for 15-20 minutes.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-md tip-icon"></i>
+                                <span><strong>See a doctor:</strong> Get professional medical evaluation, especially for head injuries.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-head-side-virus tip-icon"></i>
+                                <span><strong>Mental recovery:</strong> It's normal to feel shaken. Talk to someone you trust about the experience.</span>
+                            </li>
+                        </ul>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px;">
+                            <h3 style="margin-bottom: 10px; color: var(--warning);">
+                                <i class="fas fa-exclamation-circle"></i> Warning Signs That Need Immediate Medical Attention
+                            </h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Difficulty breathing</li>
+                                <li>Severe bleeding that won't stop</li>
+                                <li>Loss of consciousness, even briefly</li>
+                                <li>Confusion, dizziness, or vision problems</li>
+                                <li>Chest pain or abdominal pain</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Mental Game -->
+            <div class="tab-content" id="mental">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h2 class="card-title">The Mental Game: Psychology of Self-Defense</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Your mindset is 80% of self-defense. Train your brain to respond effectively under pressure:</p>
+                        
+                        <ul class="tips-list">
+                            <li>
+                                <i class="fas fa-meditation tip-icon"></i>
+                                <span><strong>Stay Calm Under Pressure:</strong> Practice deep breathing techniques daily so they become automatic in crisis.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-bullseye tip-icon"></i>
+                                <span><strong>Visualize Success:</strong> Mentally rehearse defending yourself effectively. This prepares your brain for real situations.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-deaf tip-icon"></i>
+                                <span><strong>Develop a "Fighter's Stance":</strong> Stand with confidence, make eye contact, and speak firmly. Predators often target those who appear weak.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-history tip-icon"></i>
+                                <span><strong>Learn From Close Calls:</strong> Analyze situations where you felt unsafe. What could you do differently next time?</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-hands-helping tip-icon"></i>
+                                <span><strong>Trust Your Instincts:</strong> Your subconscious often notices danger before you consciously recognize it.</span>
+                            </li>
+                        </ul>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(46, 204, 113, 0.1); border-radius: 10px; border-left: 4px solid var(--success);">
+                            <h3 style="margin-bottom: 10px; color: var(--success);">
+                                <i class="fas fa-seedling"></i> Building Confidence Daily
+                            </h3>
+                            <p>Self-defense confidence grows with small daily habits:</p>
+                            <ul style="padding-left: 20px; margin-top: 10px;">
+                                <li>Walk with purpose and awareness</li>
+                                <li>Practice saying "NO" firmly in the mirror</li>
+                                <li>Take a self-defense class (even online)</li>
+                                <li>Share safety tips with friends and family</li>
+                                <li>Regularly check your environment (make it a habit)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <div class="footer">
+        <button class="footer-btn active" data-tab="basics">
+            <i class="fas fa-home footer-icon"></i>
+            <span>Basics</span>
+        </button>
+        <button class="footer-btn" data-tab="techniques">
+            <i class="fas fa-fist-raised footer-icon"></i>
+            <span>Techniques</span>
+        </button>
+        <button class="footer-btn" data-tab="scenarios">
+            <i class="fas fa-exclamation-triangle footer-icon"></i>
+            <span>Scenarios</span>
+        </button>
+        <button class="footer-btn" data-tab="recovery">
+            <i class="fas fa-heartbeat footer-icon"></i>
+            <span>Recovery</span>
+        </button>
+        <button class="footer-btn" data-tab="mental">
+            <i class="fas fa-brain footer-icon"></i>
+            <span>Mental</span>
+        </button>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn, .footer-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Update tab buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll(`.tab-btn[data-tab="${tabId}"]`).forEach(btn => {
+                    btn.classList.add('active');
+                });
+                
+                // Update footer buttons
+                document.querySelectorAll('.footer-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll(`.footer-btn[data-tab="${tabId}"]`).forEach(btn => {
+                    btn.classList.add('active');
+                });
+                
+                // Show selected tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+                
+                // Special HP bar animation for recovery tab
+                if (tabId === 'recovery') {
+                    animateHPBar();
+                }
+            });
+        });
+
+        // HP Bar Animation
+        function animateHPBar() {
+            const hpBar = document.getElementById('hpBar');
+            const hpValue = document.getElementById('hpValue');
+            
+            // Reset to low HP
+            hpBar.style.width = '30%';
+            hpValue.textContent = '30%';
+            hpBar.classList.add('low-hp');
+            
+            // After 2 seconds, show recovery
+            setTimeout(() => {
+                hpBar.style.width = '85%';
+                hpValue.textContent = '85%';
+                hpBar.classList.remove('low-hp');
+                
+                // Change text to show recovery
+                setTimeout(() => {
+                    hpValue.textContent = '85% (Recovering)';
+                }, 500);
+            }, 2000);
+        }
+
+        // Emergency Button
+        document.getElementById('emergencyBtn').addEventListener('click', function() {
+            // Show emergency guide
+            alert("EMERGENCY GUIDE:\n\n1. CALL LOCAL EMERGENCY NUMBER IMMEDIATELY\n2. Provide your exact location\n3. Describe the situation briefly\n4. Stay on the line until help arrives\n5. If safe, move to a secure location\n\nRemember: Your safety is the top priority!");
+            
+            // Vibrate if supported (for mobile)
+            if (navigator.vibrate) {
+                navigator.vibrate([200, 100, 200, 100, 200]);
+            }
+            
+            // Switch to scenarios tab
+            document.querySelector('[data-tab="scenarios"]').click();
+        });
+
+        // Technique cards interaction
+        document.querySelectorAll('.technique-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const techniqueName = this.querySelector('h3').textContent;
+                alert(`Technique: ${techniqueName}\n\nPractice this move slowly at first. Focus on proper form rather than speed. Consider taking a class for in-person instruction.`);
+            });
+        });
+
+        // Initialize HP bar animation if on recovery tab on load
+        if (window.location.hash === '#recovery') {
+            setTimeout(animateHPBar, 500);
+        }
+
+        // Mobile-friendly touch improvements
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
